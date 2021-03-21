@@ -1,0 +1,132 @@
+@media screen and (max-width: 1600px) {
+    section.main .main-container .block-car, section.main .main-container .block-main-description {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 1500px) {
+    header #header-container, #footer .footer-container, section.main .main-container, section.main .main-container .block-main-description h1.title {
+        width: 95%;
+    }
+}
+@media screen and (max-width: 1300px) {
+    header #header-container .header-block-text {
+        width: 130px;
+    }
+}
+@media screen and (max-width: 1199px) {
+    header #header-container .header-block-text {
+        display: none;
+    }
+
+    header #header-container #header-menu {
+        display: none;
+    }
+
+    section.main .main-container .block-main-description {
+        width: 50%;
+    }
+
+    section.price .container .price-table {
+        width: 95%;
+        margin: 0 auto;
+    }
+    section.sertificates .slider-sertificates {
+        width: 95%;
+    }
+    .slider-sertificates .slide1, .slider-sertificates .slide3 {
+        display: none;
+    }
+    section.delivery .container .delivery-main .description-blocks {
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 1023px) {
+    section.main .main-container .block-main-description {
+        order: 1;
+        width: 95%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    section.main .main-container .block-car {
+        order: 2;
+        width: 95%;
+    }
+    section.main .main-container {
+        justify-content: center;
+    }
+    section.main .add-blocks {
+        justify-content: center;
+    }
+    section.stages-work .container .stages {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.price .container .price-table {
+        display: none;
+    }
+    section.cooperation .container .block-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    section.presentation .presentation-container .present-form {
+        height: 500%;
+    }
+    section.presentation .presentation-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section.questions .container {
+        justify-content: center;
+    }
+    #footer .footer-container {
+        flex-wrap: wrap;
+        width: 70%;
+    }
+    section.location .slider .slide {
+        width: 95%;
+        justify-content: center;
+    }
+    .slide-img img {
+            max-width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    header #header-container .social-icons {
+        display: none;
+    }
+    section.main .main-container .block-main-description p {
+        width: 95%;
+    }
+    section.properties .prop-container .prop-heading {
+        width: 95%;
+    }
+    section.properties .prop-container .prop-heading .partners {
+        width: 85%;
+    }
+    section.questions .container .block-questions .block-faq .faq-item {
+        width: 95%;
+    }
+    section.properties .prop-container .prop-main .point {
+        position: static;
+    }
+}
+@media screen and (max-width: 479px) {
+    section.delivery .container .delivery-main .selection-btn {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.main .main-container .block-main-description .block-btn-main {
+        width: 320px;
+    }
+    section.main .main-container .block-main-description .block-btn-main .btn-main {
+        width: 210px;
+        height: 50%;
+        font-size: 12px;
+    }
+    section.questions .container .block-consultant {
+        width: 95%;
+    }
+}

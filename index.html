@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>EcomSeller</title>
+    <link rel="stylesheet" href="dist/styles/main.css">
+    <link rel="stylesheet" href="dist/styles/adaprive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<header>
+    <div id="header-container">
+        <div class="header-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="193" height="37" viewBox="0 0 193 37">
+                <image id="logo" width="193" height="37" xlink:href="data:img/png;base64,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"/>
+            </svg>
+        </div>
+        <div class="header-block-text">
+            Логистика и Хранение товаров <br>  для маркетплейсов в Москве и МО
+        </div>
+        <div id="header-menu">
+            <a href="#">
+                Услуги
+                <img src="images/down.png" alt="">
+            </a>
+            <a href="#">Клиенты</a>
+            <a href="#">Партнеры</a>
+            <a href="#">
+                База знаний
+                <img src="images/down.png" alt="">
+            </a>
+            <a href="#">
+                О нас
+                <img src="images/down.png" alt="">
+            </a>
+        </div>
+        <div class="header-info">
+            <div class="number">
+                <img src="images/phone.png" alt="">
+                8-800-350-77-49
+            </div>
+            <div class="mail">
+                <img src="images/mail.png" alt="">
+                info@sellecom.ru
+            </div>
+        </div>
+        <div class="social-icons">
+            <div class="social-i">
+                <img src="images/whatsapp.png" alt="">
+            </div>
+            <div class="social-i">
+                <img src="images/viber.png" alt="">
+            </div>
+            <div class="social-i">
+                <img src="images/twitterr.png" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+<section class="main">
+    <div class="main-container">
+        <div class="block-car">
+            <img src="images/car.png" alt="">
+        </div>
+        <div class="block-main-description">
+            <h1 class="title">
+                Заберем товары с вашего склада,
+                упакуем, сделаем маркировку
+                и доставим день в день на все
+                маркетплейсы по низкой цене.
+            </h1>
+            <p>
+                Ответьте на 4 вопроса и получите расчет стоимости
+                доставки ваших товаров
+            </p>
+            <div class="block-btn-main">
+                <img src="images/btnimg1.png" alt="">
+                <button class="btn-main btn-yellow">Получить расчет доставки</button>
+            </div>
+        </div>
+    </div>
+    <div class="add-blocks">
+        <div class="add-block">
+            <div class="add-block-img">
+                <img src="images/add-1.png" alt="">
+            </div>
+            <div class="add-block-text">Ежедневная доставка на все площадки.</div>
+        </div>
+        <div class="add-block">
+            <div class="add-block-img">
+                <img src="images/add-2.png" alt="">
+            </div>
+            <div class="add-block-text">Более 5000 отправлений в день</div>
+        </div>
+        <div class="add-block">
+            <div class="add-block-img">
+                <img src="images/add-3.png" alt="">
+            </div>
+            <div class="add-block-text">Без доплат за ожидание  на складах маркетплейса</div>
+        </div>
+    </div>
+</section>
+<section class="properties">
+    <div class="prop-container">
+        <div class="prop-heading">
+            <h2 class="title">Ecom Seller</h2>
+            <h3 class="title">официальный технологический партнер</h3>
+            <div class="partners">
+                <img class="partner-logo" src="images/ozon-logo.png" alt="">
+                <img class="partner-logo" src="images/wildberris-logo.png" alt="">
+                <img class="partner-logo" src="images/market-logo.png" alt="">
+                <img class="partner-logo" src="images/Аliexpress-logo.png" alt="">
+            </div>
+        </div>
+        <div class="prop-main">
+            <div class="point point-one">+</div>
+            <div class="point point-two">+</div>
+            <div class="point point-three">+</div>
+            <div class="point point-four">+</div>
+            <div class="point point-five">+</div>
+            <div class="point point-six">+</div>
+        </div>
+    </div>
+</section>
+<section class="delivery">
+    <div class="container">
+        <h2 class="title">
+            Выберите удобный способ доставки товаров
+            до маркетплейсов и ваших покупателей
+        </h2>
+        <div class="delivery-main">
+            <div class="selection-btn">
+                <div class="delivery-btn">
+                    <img class="img-courier" src="images/deliverycourier.png" alt="">
+                    <button class="btn-del">Курьерская доставка</button>
+                </div>
+                <div class="delivery-btn">
+                    <img class="img-route" src="images/deliveryroute.png" alt="">
+                    <button class="btn-del">Маршрутная доставка</button>
+                </div>
+            </div>
+            <div id="courier" class="description-blocks">
+                <div class="description-block">
+                    <div class="block-img">
+                        <img src="images/courier1.png" alt="">
+                    </div>
+                    <div class="block-text">
+                        <h4 class="title">УДОБНО ЗАКАЗАТЬ</h4>
+                        <p>
+                            Три способа зказать курьера:
+                            через сайт, мобильную версию
+                            или телеграм бота.
+                        </p>
+                    </div>
+                </div>
+                <div class="description-block">
+                    <div class="block-img">
+                        <img src="images/courier2.png" alt="">
+                    </div>
+                    <div class="block-text">
+                        <h4 class="title">ПОДАЧА ЗА 30 МИНУТ</h4>
+                        <p>
+                            Система в автоматическом
+                            режиме найдет свободного
+                            курьерав течение нескольких
+                            минут.
+                        </p>
+                    </div>
+                </div>
+                <div class="description-block">
+                    <div class="block-img">
+                        <img src="images/courier3.png" alt="">
+                    </div>
+                    <div class="block-text">
+                        <h4 class="title">ФИКСИРОВАННАЯ ЦЕНА</h4>
+                        <p>
+                            Мы фиксируем стоимость
+                            заказа исходя из указанного
+                            Вами маршрута.
+                        </p>
+                    </div>
+                </div>
+                <div class="description-block">
+                    <div class="block-img">
+                        <img src="images/courier4.png" alt="">
+                    </div>
+                    <div class="block-text">
+                        <h4 class="title">ОПЫТНЫЕ КУРЬЕРЫ</h4>
+                        <p>
+                            Мы не подключаем курьеров
+                            дистанционно! Все курьеры
+                            без исключения проходят
+                            очное обучение в нашем
+                            центре подготовки.
+                        </p>
+                    </div>
+                </div>
+                <div class="description-block">
+                    <div class="block-img">
+                        <img src="images/courier5.png" alt="">
+                    </div>
+                    <div class="block-text">
+                        <h4 class="title">ПОДДЕРЖКА 24/7</h4>
+                        <p>
+                            Мы работаем круглосуточно.
+                            В любое время дня и ночи
+                            вы можете написать или
+                            позвонить нам
+                        </p>
+                    </div>
+                </div>
+                <div class="description-block">
+                    <div class="block-img">
+                        <img src="images/courier6.png" alt="">
+                    </div>
+                    <div class="block-text">
+                        <h4 class="title">СТРАХОВАНИЕ ПОСЫЛКИ</h4>
+                        <p>
+                            Ваша посылка всегда находится
+                            под надёжной защитой. Ценный
+                            груз вы можете застраховать
+                            до 100 000 руб
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-btn">
+                <img src="images/calc.png" alt="">
+                <button class="cost-btn btn-yellow">рассчитать стоимость доставки </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="stages-work">
+    <div class="container">
+        <h2 class="title">Ключевые этапы доставки товаров до маркетплейсов</h2>
+        <div class="stages">
+            <div class="stage">
+                <div class="st-img">
+                    <img src="images/st1.png" alt="">
+                </div>
+                <div class="st-num">1</div>
+                <div class="st-text">
+                    Забираем ваши товары
+                    со склада в Москве
+                    и МО до 18.00
+                </div>
+            </div>
+            <div class="stage">
+                <div class="st-img">
+                    <img src="images/st2.png" alt="">
+                </div>
+                <div class="st-num">2</div>
+                <div class="st-text">
+                    Привезем к нам на склад
+                    и упакуем по правилам
+                    маркетплейсов
+                </div>
+            </div>
+            <div class="stage">
+                <div class="st-img">
+                    <img src="images/st3.png" alt="">
+                </div>
+                <div class="st-num">3</div>
+                <div class="st-text">
+                    Сдадим ваши товары
+                    на склады
+                    маркетплейсов
+                    до 22.00
+                </div>
+            </div>
+            <div class="stage">
+                <div class="st-img">
+                    <img src="images/st4.png" alt="">
+                </div>
+                <div class="st-num">4</div>
+                <div class="st-text">
+                    Отправим все
+                    документы, связанные
+                    с поставкой
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="price">
+    <div class="container">
+        <h2 class="title">
+            Мы доставляем товары
+            по самым низким тарифам в Москве
+        </h2>
+        <h3 class="title">
+            Забор товара осуществляется до 18.00, отгрузка до склада маркетплейса до 22.00 текущего дня
+        </h3>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <td class="col-1">Услуга</td>
+                    <td class="col-2">Цена за единицу (без НДС)</td>
+                    <td class="col-3">Минимальный объем в день, шт*</td>
+                    <td class="col-4">ФИКС</td>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <p>
+                            *  По итогам месяца мы пересчитаем ваш объем и учтем при расчете среднесуточное количество отправлений. Если среднесуточное количество будет 50 и более,
+                            мы зачтем вам разницу в счет будущих услуг.
+                        </p>
+                        <p>
+                            ** Коробка из картона размером 60*40*40
+                        </p>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+                <td>Забор товара в пределах МКАД (фиксированная цена)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>700 руб.</td>
+            </tr>
+            <tr class="string-2">
+                <td>Доставка 1 паллеты до пункта приема маркетплейса</td>
+                <td>1500 руб.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Доставка 1 коробки** до пункта приема маркетплейса</td>
+                <td>150 руб.</td>
+                <td>5 коробок** </td>
+                <td>-</td>
+            </tr>
+            <tr class="string-4">
+                <td>
+                    Полный цикл обработки товара для FBS
+                    (обработка заказа в личном кабинете
+                    маркетплейса, прием товара на нашем складе,
+                    сортировка, упаковка, отгрузка)
+                </td>
+                <td>63,26 руб.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Отправка заказа и сдача на склад маркетплейс</td>
+                <td>14,00 руб.</td>
+                <td>50,00 шт.</td>
+                <td>-</td>
+            </tr>
+            <tr class="string-6">
+                <td>
+                    Доставка заказа курьером до покупателя
+                    по Москве (OZON, Я.Маркет, AliExpress)
+                </td>
+                <td>14,00 руб.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+<section class="cooperation">
+    <div class="container">
+        <h2 class="title">Мы сотрудничаем</h2>
+        <div class="block-cards">
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/card1.png" alt="">
+                </div>
+                <div class="card-text">
+                    Продавцами маркетплейсов по модели FBS
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/card2.png" alt="">
+                </div>
+                <div class="card-text">
+                    Интернет-магазинами
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/card3.png" alt="">
+                </div>
+                <div class="card-text">
+                    Крупным бизнесом
+                </div>
+            </div>
+        </div>
+        <div class="cooperation-btn">
+            <img src="images/customer-service.png" alt="">
+            <button class="order-btn btn-yellow">Заказать консультацию специалиста</button>
+        </div>
+    </div>
+</section>
+<section class="presentation">
+    <div class="presentation-container">
+        <div class="present-img">
+            <img src="images/magazine.png" alt="">
+        </div>
+        <div class="present-form">
+            <form action="#">
+                <h4 class="title">Скачайте презентацию</h4>
+                <h5 class="title">и узнайте о всех возможностях  работы с нами</h5>
+                <label>
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="tel" name="phone_number" placeholder="+7 (900) 123-45-67" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
+                </label>
+                <p>Выберите удобный мессенджер для получения презентации</p>
+                <div class="messengers">
+                    <div class="whatsapp">
+                        <img src="images/whatsapp-png--1500.png" alt="">
+                    </div>
+                    <div class="telegram">
+                        <img src="images/telegram.png" alt="">
+                    </div>
+                    <div class="viber">
+                        <img src="images/viberbtn.png" alt="">
+                    </div>
+                </div>
+                <p class="check">
+                    Нажимая на кнопку, вы даете согласие на обработку
+                    своих персональных  данных и соглашаетесь
+                    с Пользовательским соглашением
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="location">
+    <h2 class="title">Приглашаем вас к нам на склад оценить качество работы</h2>
+    <div class="bg-slider"></div>
+    <div class="slider">
+        <div class="slide">
+            <div class="slide-img">
+                <img src="images/slide1.png" alt="">
+            </div>
+            <div class="slide-text">
+                <h5 class="title">Фото Склада, персонала, транпорта</h5>
+                <p>Склад 1000м2 - подпись к фото</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="sertificates">
+    <h2 class="title">
+        Мы являемся официальными партнерами
+        крупнейших маркетплейсов
+    </h2>
+    <div class="slider-sertificates">
+        <div class="slide1">
+            <div class="slide-img">
+                <img src="images/slide-sert1.png" alt="">
+            </div>
+            <div class="slide-text">Официальное подтверждение от Яндекс</div>
+        </div>
+        <div class="slide2">
+            <div class="slide-img">
+                <img src="images/slide-sertactive.png" alt="">
+            </div>
+            <div class="slide-text">Официальное подтверждение от Озон</div>
+        </div>
+        <div class="slide3">
+            <div class="slide-img">
+                <img src="images/slide-sert1.png" alt="">
+            </div>
+            <div class="slide-text">Благодарность от клиентов</div>
+        </div>
+    </div>
+</section>
+<section class="questions">
+    <div class="container">
+        <h2 class="title">Часто задаваемые вопросы</h2>
+        <div class="block-questions">
+            <div class="block-faq">
+                <div class="faq-item">
+                    <label for="faq1" class="faq-title">Экран «FAQ, ответы на вопросы»</label>
+                    <input class="faq-input" type="radio" name="faq" id="faq1">
+                    <div class="faq-text">
+                        <p>
+                            Сайт быстро загружается (сервис PageSpeed Insight)<br>
+                            Сайт адаптирован под все популярные устройства (сервис Adaptivator)<br>
+                            Сайт адаптирован под все популярные браузеры (сервис Browsershots)<br>
+                            По телефону можно позвонить, на почту написать <br>
+                            Все кнопки работают и передают заявки на почту, мессенджеры или <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <label for="faq1" class="faq-title">Экран «FAQ, ответы на вопросы»</label>
+                    <input class="faq-input" type="radio" name="faq" id="faq1">
+                    <div class="faq-text" style="display: none">
+                        <p>
+                            Сайт быстро загружается (сервис PageSpeed Insight)<br>
+                            Сайт адаптирован под все популярные устройства (сервис Adaptivator)<br>
+                            Сайт адаптирован под все популярные браузеры (сервис Browsershots)<br>
+                            По телефону можно позвонить, на почту написать <br>
+                            Все кнопки работают и передают заявки на почту, мессенджеры или <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <label for="faq1" class="faq-title">Экран «FAQ, ответы на вопросы»</label>
+                    <input class="faq-input" type="radio" name="faq" id="faq1">
+                    <div class="faq-text" style="display: none">
+                        <p>
+                            Сайт быстро загружается (сервис PageSpeed Insight)<br>
+                            Сайт адаптирован под все популярные устройства (сервис Adaptivator)<br>
+                            Сайт адаптирован под все популярные браузеры (сервис Browsershots)<br>
+                            По телефону можно позвонить, на почту написать <br>
+                            Все кнопки работают и передают заявки на почту, мессенджеры или <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <label for="faq1" class="faq-title">Экран «FAQ, ответы на вопросы»</label>
+                    <input class="faq-input" type="radio" name="faq" id="faq1">
+                    <div class="faq-text" style="display: none">
+                        <p>
+                            Сайт быстро загружается (сервис PageSpeed Insight)<br>
+                            Сайт адаптирован под все популярные устройства (сервис Adaptivator)<br>
+                            Сайт адаптирован под все популярные браузеры (сервис Browsershots)<br>
+                            По телефону можно позвонить, на почту написать <br>
+                            Все кнопки работают и передают заявки на почту, мессенджеры или <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <label for="faq1" class="faq-title">Экран «FAQ, ответы на вопросы»</label>
+                    <input class="faq-input" type="radio" name="faq" id="faq1">
+                    <div class="faq-text" style="display: none">
+                        <p>
+                            Сайт быстро загружается (сервис PageSpeed Insight)<br>
+                            Сайт адаптирован под все популярные устройства (сервис Adaptivator)<br>
+                            Сайт адаптирован под все популярные браузеры (сервис Browsershots)<br>
+                            По телефону можно позвонить, на почту написать <br>
+                            Все кнопки работают и передают заявки на почту, мессенджеры или <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-btn">
+                <img src="images/question.png" alt="">
+                <button class="question-btn btn-yellow">Задать свой вопрос</button>
+            </div>
+
+        </div>
+        <div class="block-consultant">
+            <img src="images/consultant.png" alt="">
+            <div class="consultant-cart">
+                <div class="cart-text">
+                    <p class="name">Александр</p>
+                    <p>Ваш персональный консультант</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="map"></section>
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="193" height="37" viewBox="0 0 193 37">
+                    <image id="logo" width="193" height="37" xlink:href="data:img/png;base64,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"/>
+                </svg>
+            </div>
+            <p>
+                Логистика и Хранение товаров
+                для маркетплейсов в Москве и МО
+            </p>
+            <p>
+                117105, Россия, г. Москва,
+                Муниципальный округ,  г. Донской
+                вн.тер., Варшавское ш., д. 1, стр. 6,
+                этаж/ помещение 2/i, ком. 30
+            </p>
+            <p>
+                ОГРН 1197746380644
+            </p>
+        </div>
+        <div class="services-container">
+            <h5 class="title">Услуги</h5>
+            <a href="#">Онбординг на маркетплейсы</a>
+            <a href="#">Техническая поддержка</a>
+            <a href="#">Продвижение товаров</a>
+            <a href="#">E-commerce Аналитика</a>
+            <a href="#">IT-Интеграция</a>
+            <a href="#">Повышение и поддержка репутации</a>
+            <a href="#">Cопровождение под ключ</a>
+            <a href="#">Единый личный кабинет для всех маркетплейсов</a>
+            <a href="#">Реализация товаров на маркетплейсах</a>
+            <a href="#">Логистика и хранение</a>
+        </div>
+        <div class="base-container">
+            <h5 class="title">База знаний</h5>
+            <a href="#">Клиенты</a>
+            <a href="#">Партнеры</a>
+            <a href="#">Блог</a>
+            <a href="#">Кейсы клиентов</a>
+            <a href="#">Правила оплаты</a>
+            <a href="#">Правила возврата</a>
+        </div>
+        <div class="company-container">
+            <h5 class="title">О компании</h5>
+            <a href="#">О нас</a>
+            <a href="#">Команда</a>
+            <a href="#">Карьера</a>
+            <a href="#">Контакты</a>
+        </div>
+        <div class="contacts-container">
+            <h5 class="title">Контакты</h5>
+            <div class="number">
+                <img src="images/phone.png" alt="">
+                8-800-350-77-49
+            </div>
+            <div class="mail">
+                <img src="images/mail.png" alt="">
+                info@sellecom.ru
+            </div>
+            <div class="social-icons">
+                <div class="social-i">
+                    <img src="images/whatsapp.png" alt="">
+                </div>
+                <div class="social-i">
+                    <img src="images/viber.png" alt="">
+                </div>
+                <div class="social-i">
+                    <img src="images/twitterr.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
